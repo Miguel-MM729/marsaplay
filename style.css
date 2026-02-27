@@ -1,0 +1,238 @@
+:root {
+      --pink: #f4a0b0;
+      --rose: #e8637a;
+      --cream: #fdf8f5;
+      --dark: #1a0a0f;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      color: var(--cream);
+      font-family: 'Cormorant Garamond', serif;
+      overflow-x: hidden;
+      min-height: 100vh;
+      position: relative;
+    }
+
+    /* ── BACKGROUND PHOTO MOSAIC ── */
+    .bg-mosaic {
+      position: fixed;
+      inset: 0;
+      z-index: 0;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      grid-template-rows: repeat(2, 50vh);
+      gap: 3px;
+    }
+
+    .bg-photo {
+      overflow: hidden;
+      position: relative;
+    }
+
+    .bg-photo img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      animation: kenBurns 20s ease-in-out infinite alternate;
+    }
+
+    .bg-photo:nth-child(1) img { animation-delay: 0s;   transform-origin: 30% 40%; }
+    .bg-photo:nth-child(2) img { animation-delay: -4s;  transform-origin: 70% 30%; }
+    .bg-photo:nth-child(3) img { animation-delay: -8s;  transform-origin: 50% 60%; }
+    .bg-photo:nth-child(4) img { animation-delay: -2s;  transform-origin: 20% 70%; }
+    .bg-photo:nth-child(5) img { animation-delay: -6s;  transform-origin: 80% 50%; }
+    .bg-photo:nth-child(6) img { animation-delay: -10s; transform-origin: 50% 30%; }
+
+    @keyframes kenBurns {
+      0%   { transform: scale(1);    rotate: 0deg; }
+      100% { transform: scale(1.10); }
+    }
+
+    /* ── OVERLAY: lighter so photos show through ── */
+    .bg-overlay {
+      position: fixed;
+      inset: 0;
+      z-index: 1;
+      /* softer blur, lighter dark tint */
+      background: rgba(12, 4, 8, 0.52);
+      backdrop-filter: blur(2px);
+      -webkit-backdrop-filter: blur(2px);
+    }
+
+    /* colour wash + vignette edges only */
+    .bg-overlay::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(ellipse 100% 100% at 50% 50%, transparent 30%, rgba(10,3,6,0.65) 100%),
+        radial-gradient(ellipse 70% 55% at 15% 15%, rgba(232,99,122,0.15) 0%, transparent 55%),
+        radial-gradient(ellipse 55% 70% at 85% 85%, rgba(244,160,176,0.12) 0%, transparent 55%);
+    }
+
+    /* ── FLOATING HEARTS ── */
+    .hearts-bg {
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      z-index: 2;
+      overflow: hidden;
+    }
+    .heart-float {
+      position: absolute;
+      bottom: -50px;
+      animation: floatUp linear infinite;
+      opacity: 0;
+    }
+    @keyframes floatUp {
+      0%   { transform: translateY(0)      rotate(0deg);   opacity: 0; }
+      10%  { opacity: 0.4; }
+      90%  { opacity: 0.18; }
+      100% { transform: translateY(-110vh) rotate(360deg); opacity: 0; }
+    }
+
+    /* ── CONTENT ── */
+    .content {
+      position: relative;
+      z-index: 10;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      padding: 60px 20px;
+      text-align: center;
+    }
+
+    /* Glass pill behind text so it's readable over the photos */
+    .glass-card {
+      background: rgba(15, 5, 9, 0.45);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      border: 1px solid rgba(244,160,176,0.15);
+      border-radius: 28px;
+      padding: clamp(30px, 6vw, 60px) clamp(30px, 8vw, 80px);
+      box-shadow: 0 8px 60px rgba(0,0,0,0.45), inset 0 1px 0 rgba(244,160,176,0.1);
+      animation: fadeUp 1s ease both;
+    }
+
+    .subtitle {
+      font-size: clamp(0.75rem, 1.8vw, 1rem);
+      letter-spacing: 0.45em;
+      text-transform: uppercase;
+      color: var(--pink);
+      opacity: 0.85;
+      margin-bottom: 18px;
+      font-weight: 300;
+      animation: fadeUp 1s ease 0.1s both;
+    }
+
+    h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(3rem, 9vw, 7rem);
+      font-weight: 700;
+      line-height: 1.05;
+      background: linear-gradient(135deg, var(--cream) 0%, var(--pink) 55%, var(--rose) 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      margin-bottom: 10px;
+      animation: fadeUp 1s ease 0.2s both;
+      filter: drop-shadow(0 4px 24px rgba(232,99,122,0.3));
+    }
+
+    .heart-divider {
+      color: var(--rose);
+      font-size: 2rem;
+      margin: 16px 0 24px;
+      animation: pulse 2s ease-in-out infinite, fadeUp 1s ease 0.4s both;
+    }
+    @keyframes pulse {
+      0%, 100% { transform: scale(1);   opacity: 0.8; }
+      50%       { transform: scale(1.3); opacity: 1;   }
+    }
+
+    .since-date {
+      font-size: clamp(0.8rem, 1.8vw, 1rem);
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: var(--pink);
+      opacity: 0.6;
+      margin-bottom: 36px;
+      font-style: italic;
+      animation: fadeUp 1s ease 0.5s both;
+    }
+
+    /* ── TIMER ── */
+    .timer-grid {
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      gap: clamp(6px, 2.5vw, 24px);
+      flex-wrap: wrap;
+      animation: fadeUp 1s ease 0.7s both;
+    }
+
+    .timer-block {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .timer-number {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(3.5rem, 10vw, 8rem);
+      font-weight: 700;
+      line-height: 1;
+      color: var(--cream);
+      text-shadow: 0 0 50px rgba(244,160,176,0.5), 0 4px 16px rgba(0,0,0,0.6);
+      min-width: clamp(80px, 18vw, 165px);
+      text-align: center;
+      transition: color 0.2s;
+    }
+
+    .timer-number.tick { color: var(--pink); }
+
+    .timer-label {
+      font-size: clamp(0.62rem, 1.3vw, 0.82rem);
+      letter-spacing: 0.35em;
+      text-transform: uppercase;
+      color: var(--pink);
+      opacity: 0.65;
+      margin-top: 7px;
+      font-weight: 300;
+    }
+
+    .timer-sep {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2.8rem, 8vw, 6.5rem);
+      color: var(--rose);
+      opacity: 0.45;
+      line-height: 1;
+      align-self: flex-start;
+      margin-top: 5px;
+    }
+
+    footer {
+      margin-top: 36px;
+      font-style: italic;
+      color: var(--pink);
+      opacity: 0.45;
+      font-size: 0.88rem;
+      letter-spacing: 0.12em;
+      animation: fadeUp 1s ease 1s both;
+    }
+
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(28px); }
+      to   { opacity: 1; transform: translateY(0);    }
+    }
+
+    @media (max-width: 600px) {
+      .timer-sep { display: none; }
+      .timer-grid { gap: 6px 16px; }
+      .glass-card { padding: 28px 20px; }
+    }
