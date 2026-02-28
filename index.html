@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MarsaPlay – Máquinas Arcade & Pinball</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Rajdhani:wght@400;600;700&family=Orbitron:wght@400;700;900&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+  <!-- ======= CURSOR CUSTOM ======= -->
+  <div class="cursor" id="cursor"></div>
+  <div class="cursor-trail" id="cursorTrail"></div>
+
+  <!-- ======= SCANLINES OVERLAY ======= -->
+  <div class="scanlines" aria-hidden="true"></div>
+
+  <!-- ======= NAV ======= -->
+  <header class="navbar" id="navbar">
+    <div class="nav-inner">
+      <a href="#" class="logo">
+        <span class="logo-pixel">MARSA</span><span class="logo-accent">PLAY</span>
+        <span class="logo-tag">EST. 1982</span>
+      </a>
+      <nav class="nav-links" id="navLinks">
+        <a href="#productos">Productos</a>
+        <a href="#nosotros">Nosotros</a>
+        <a href="#tecnologia">Tecnología</a>
+        <a href="#contacto">Contacto</a>
+      </nav>
+      <button class="nav-cta" onclick="scrollToSection('contacto')">PEDIR DEMO</button>
+      <button class="hamburger" id="hamburger" aria-label="Menú">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- ======= HERO ======= -->
+  <section class="hero" id="hero">
+    <div class="hero-bg">
+      <img src="https://images.unsplash.com/photo-1511882150382-421056c89033?w=1600&q=80" alt="Arcade" class="hero-img" />
+      <div class="hero-overlay"></div>
+    </div>
+    <div class="hero-content">
+      <div class="hero-badge">
+        <span class="blink">▶</span> FABRICANTE ESPAÑOL DE ARCADE
+      </div>
+      <h1 class="hero-title">
+        <span class="line1">JUEGA</span>
+        <span class="line2">EN GRANDE</span>
+      </h1>
+      <p class="hero-sub">Máquinas Arcade · Pinball · Dardos · Jukeboxes<br/>Fabricación española desde 1982</p>
+      <div class="hero-actions">
+        <button class="btn-primary" onclick="scrollToSection('productos')">VER CATÁLOGO</button>
+        <button class="btn-ghost" onclick="scrollToSection('nosotros')">NUESTRA HISTORIA</button>
+      </div>
+      <div class="hero-stats">
+        <div class="stat"><span class="stat-num" data-target="40">0</span><span class="stat-label">Años de experiencia</span></div>
+        <div class="stat"><span class="stat-num" data-target="60">0</span><span class="stat-label">Países</span></div>
+        <div class="stat"><span class="stat-num" data-target="500">0</span><span class="stat-label">Modelos producidos</span></div>
+      </div>
+    </div>
+    <div class="hero-scroll-indicator">
+      <span>SCROLL</span>
+      <div class="scroll-bar"></div>
+    </div>
+  </section>
+
+  <!-- ======= TICKER ======= -->
+  <div class="ticker-wrap">
+    <div class="ticker">
+      <span>PINBALL &nbsp;★&nbsp; ARCADE &nbsp;★&nbsp; DARDOS ELECTRÓNICOS &nbsp;★&nbsp; JUKEBOXES &nbsp;★&nbsp; NEW CANASTA &nbsp;★&nbsp; ZOO PARK &nbsp;★&nbsp; FABRICACIÓN ESPAÑOLA &nbsp;★&nbsp; TECNOLOGÍA LED &nbsp;★&nbsp; SOPORTE TÉCNICO &nbsp;★&nbsp;</span>
+      <span>PINBALL &nbsp;★&nbsp; ARCADE &nbsp;★&nbsp; DARDOS ELECTRÓNICOS &nbsp;★&nbsp; JUKEBOXES &nbsp;★&nbsp; NEW CANASTA &nbsp;★&nbsp; ZOO PARK &nbsp;★&nbsp; FABRICACIÓN ESPAÑOLA &nbsp;★&nbsp; TECNOLOGÍA LED &nbsp;★&nbsp; SOPORTE TÉCNICO &nbsp;★&nbsp;</span>
+    </div>
+  </div>
+
+  <!-- ======= PRODUCTOS ======= -->
+  <section class="section products" id="productos">
+    <div class="section-header">
+      <p class="section-eyebrow">// CATÁLOGO</p>
+      <h2 class="section-title">NUESTRAS MÁQUINAS</h2>
+      <p class="section-desc">Cada máquina es una obra de ingeniería y entretenimiento, diseñada para durar décadas.</p>
+    </div>
+
+    <div class="products-grid">
+
+      <article class="product-card featured" data-tilt>
+        <div class="card-img-wrap">
+          <img src="https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=800&q=80" alt="Pinball New Canasta" loading="lazy" />
+          <div class="card-glow"></div>
+          <span class="card-badge">BESTSELLER</span>
+        </div>
+        <div class="card-body">
+          <p class="card-cat">PINBALL</p>
+          <h3 class="card-title">New Canasta</h3>
+          <p class="card-desc">Remake moderno del clásico Canasta '86. Pantalla LCD, iluminación 100% LED, sistema de protección de bobinas exclusivo.</p>
+          <ul class="card-features">
+            <li>✦ Pantalla LCD en backbox</li>
+            <li>✦ Iluminación LED completa</li>
+            <li>✦ Protección de bobinas patentada</li>
+            <li>✦ Sistema de sonido digital 5.1</li>
+          </ul>
+          <button class="btn-card">MÁS INFO <span>→</span></button>
+        </div>
+      </article>
+
+      <article class="product-card" data-tilt>
+        <div class="card-img-wrap">
+          <img src="https://images.unsplash.com/photo-1596727147705-61a532a659bd?w=800&q=80" alt="Dardos electrónicos" loading="lazy" />
+          <div class="card-glow"></div>
+        </div>
+        <div class="card-body">
+          <p class="card-cat">DARDOS</p>
+          <h3 class="card-title">E-Dart Pro</h3>
+          <p class="card-desc">Máquinas de dardos electrónicos para hostelería y locales de ocio. Pantalla HD y multijugador online.</p>
+          <ul class="card-features">
+            <li>✦ Pantalla HD 27"</li>
+            <li>✦ Multijugador online</li>
+            <li>✦ 50+ modos de juego</li>
+          </ul>
+          <button class="btn-card">MÁS INFO <span>→</span></button>
+        </div>
+      </article>
+
+      <article class="product-card" data-tilt>
+        <div class="card-img-wrap">
+          <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&q=80" alt="Jukebox" loading="lazy" />
+          <div class="card-glow"></div>
+          <span class="card-badge new">NUEVO</span>
+        </div>
+        <div class="card-body">
+          <p class="card-cat">JUKEBOX</p>
+          <h3 class="card-title">SoundBox Digital</h3>
+          <p class="card-desc">Jukebox digital conectado con millones de canciones, streaming integrado y gestión remota vía app.</p>
+          <ul class="card-features">
+            <li>✦ Streaming ilimitado</li>
+            <li>✦ App de gestión</li>
+            <li>✦ Sonido Hi-Fi 300W</li>
+          </ul>
+          <button class="btn-card">MÁS INFO <span>→</span></button>
+        </div>
+      </article>
+
+      <article class="product-card" data-tilt>
+        <div class="card-img-wrap">
+          <img src="https://images.unsplash.com/photo-1610296669228-602fa827fc1f?w=800&q=80" alt="Arcade cabinet" loading="lazy" />
+          <div class="card-glow"></div>
+        </div>
+        <div class="card-body">
+          <p class="card-cat">ARCADE</p>
+          <h3 class="card-title">Zoo Park</h3>
+          <p class="card-desc">Arcade redemption multijugador para atraer a toda la familia. Sistema de tickets electrónico integrado.</p>
+          <ul class="card-features">
+            <li>✦ Hasta 4 jugadores</li>
+            <li>✦ Sistema de tickets</li>
+            <li>✦ Monitor 43" 4K</li>
+          </ul>
+          <button class="btn-card">MÁS INFO <span>→</span></button>
+        </div>
+      </article>
+
+    </div>
+
+    <div class="products-cta">
+      <button class="btn-primary large">VER CATÁLOGO COMPLETO</button>
+    </div>
+  </section>
+
+  <!-- ======= NOSOTROS ======= -->
+  <section class="section about" id="nosotros">
+    <div class="about-inner">
+      <div class="about-img-col">
+        <div class="about-img-frame">
+          <img src="https://images.unsplash.com/photo-1633101585272-9ccc38dfbb04?w=800&q=80" alt="Fábrica MarsaPlay" loading="lazy" />
+          <div class="about-img-deco"></div>
+        </div>
+        <div class="about-badge-float">
+          <p class="badge-num">40+</p>
+          <p class="badge-text">AÑOS<br/>FABRICANDO</p>
+        </div>
+      </div>
+      <div class="about-text-col">
+        <p class="section-eyebrow">// QUIÉNES SOMOS</p>
+        <h2 class="section-title left">LA PASIÓN<br/>POR EL JUEGO</h2>
+        <p class="about-desc">MarsaPlay nació en España con una misión clara: fabricar máquinas de entretenimiento que resistan el paso del tiempo, tanto en diseño como en tecnología. Somos el puente entre la nostalgia del arcade clásico y la innovación digital del siglo XXI.</p>
+        <p class="about-desc">Cada máquina que sale de nuestra fábrica lleva décadas de experiencia en ingeniería de entretenimiento. Exportamos a más de 60 países y seguimos siendo referentes globales en la industria del ocio coin-op.</p>
+        <div class="about-pillars">
+          <div class="pillar">
+            <span class="pillar-icon">⚙</span>
+            <h4>Ingeniería Española</h4>
+            <p>Diseño y fabricación 100% nacional con los más altos estándares de calidad.</p>
+          </div>
+          <div class="pillar">
+            <span class="pillar-icon">💡</span>
+            <h4>Innovación LED</h4>
+            <p>Primeros en implementar iluminación LED total en pinball europeo.</p>
+          </div>
+          <div class="pillar">
+            <span class="pillar-icon">🛡</span>
+            <h4>Soporte Garantizado</h4>
+            <p>Servicio técnico oficial y repuestos disponibles por 15+ años.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======= TECNOLOGÍA ======= -->
+  <section class="section tech" id="tecnologia">
+    <div class="tech-bg">
+      <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?w=1600&q=80" alt="Tecnología" class="tech-bg-img" loading="lazy" />
+      <div class="tech-overlay"></div>
+    </div>
+    <div class="tech-content">
+      <p class="section-eyebrow light">// INNOVACIÓN</p>
+      <h2 class="section-title light">TECNOLOGÍA<br/>QUE MARCA<br/>LA DIFERENCIA</h2>
+      <div class="tech-grid">
+        <div class="tech-item">
+          <div class="tech-num">01</div>
+          <h4>Sistema de Bobinas Protegidas</h4>
+          <p>Patente exclusiva MarsaPlay que aisla las bobinas del resto de componentes, aumentando la vida útil un 300%.</p>
+        </div>
+        <div class="tech-item">
+          <div class="tech-num">02</div>
+          <h4>Full LED Technology</h4>
+          <p>Eliminación total de bombillas incandescentes. Menor consumo, mayor brillo, 50.000 horas de vida útil.</p>
+        </div>
+        <div class="tech-item">
+          <div class="tech-num">03</div>
+          <h4>LCD Backbox Display</h4>
+          <p>Pantallas LCD de alta definición integradas en el backbox para animaciones y video de alta calidad.</p>
+        </div>
+        <div class="tech-item">
+          <div class="tech-num">04</div>
+          <h4>Conectividad IoT</h4>
+          <p>Monitorización remota, telemetría en tiempo real y actualizaciones OTA para toda la flota.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======= GALERÍA ======= -->
+  <section class="section gallery">
+    <div class="section-header">
+      <p class="section-eyebrow">// GALERÍA</p>
+      <h2 class="section-title">EN ACCIÓN</h2>
+    </div>
+    <div class="gallery-track" id="galleryTrack">
+      <div class="gallery-item">
+        <img src="https://images.unsplash.com/photo-1536566482680-fca31930a0bd?w=600&q=80" alt="Arcade" loading="lazy" />
+      </div>
+      <div class="gallery-item">
+        <img src="https://images.unsplash.com/photo-1511882150382-421056c89033?w=600&q=80" alt="Arcade" loading="lazy" />
+      </div>
+      <div class="gallery-item">
+        <img src="https://images.unsplash.com/photo-1471478331149-c72f17e33c73?w=600&q=80" alt="Arcade" loading="lazy" />
+      </div>
+      <div class="gallery-item">
+        <img src="https://images.unsplash.com/photo-1562174056-4f1e0720de68?w=600&q=80" alt="Gaming" loading="lazy" />
+      </div>
+      <div class="gallery-item">
+        <img src="https://images.unsplash.com/photo-1614849963640-9cc74b2a826f?w=600&q=80" alt="Arcade machines" loading="lazy" />
+      </div>
+      <div class="gallery-item">
+        <img src="https://images.unsplash.com/photo-1595436961218-1b674d29b8ce?w=600&q=80" alt="Arcade" loading="lazy" />
+      </div>
+    </div>
+    <div class="gallery-controls">
+      <button class="gallery-btn" id="galleryPrev">←</button>
+      <button class="gallery-btn" id="galleryNext">→</button>
+    </div>
+  </section>
+
+  <!-- ======= TESTIMONIOS ======= -->
+  <section class="section testimonials">
+    <div class="section-header">
+      <p class="section-eyebrow">// OPINIONES</p>
+      <h2 class="section-title">LO QUE DICEN<br/>NUESTROS CLIENTES</h2>
+    </div>
+    <div class="testimonials-grid">
+      <div class="testimonial-card">
+        <p class="testi-quote">"Las máquinas MarsaPlay llevan 8 años en nuestro local sin una sola avería grave. La inversión se amortizó en 18 meses."</p>
+        <div class="testi-author">
+          <div class="testi-avatar">JG</div>
+          <div>
+            <strong>Javier García</strong>
+            <span>Propietario, Arcade Central Madrid</span>
+          </div>
+        </div>
+        <div class="testi-stars">★★★★★</div>
+      </div>
+      <div class="testimonial-card featured-testi">
+        <p class="testi-quote">"El soporte técnico es incomparable. Recambios disponibles al día siguiente y un equipo humano que realmente conoce sus productos."</p>
+        <div class="testi-author">
+          <div class="testi-avatar">ML</div>
+          <div>
+            <strong>María López</strong>
+            <span>Gerente, Fun Zone Barcelona</span>
+          </div>
+        </div>
+        <div class="testi-stars">★★★★★</div>
+      </div>
+      <div class="testimonial-card">
+        <p class="testi-quote">"El New Canasta es la máquina que más juego genera en toda nuestra sala. Los clientes vuelven por ella."</p>
+        <div class="testi-author">
+          <div class="testi-avatar">AR</div>
+          <div>
+            <strong>Antonio Ruiz</strong>
+            <span>Director, Retro Arcade Valencia</span>
+          </div>
+        </div>
+        <div class="testi-stars">★★★★★</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======= CONTACTO ======= -->
+  <section class="section contact" id="contacto">
+    <div class="contact-inner">
+      <div class="contact-info">
+        <p class="section-eyebrow">// CONTACTO</p>
+        <h2 class="section-title left">HABLEMOS<br/>DE TU PROYECTO</h2>
+        <p class="contact-desc">¿Quieres una demo? ¿Eres distribuidor? ¿Necesitas soporte técnico? Nuestro equipo responde en menos de 24 horas.</p>
+        <div class="contact-details">
+          <div class="contact-detail">
+            <span class="detail-icon">📍</span>
+            <div>
+              <strong>Dirección</strong>
+              <p>Polígono Industrial, España</p>
+            </div>
+          </div>
+          <div class="contact-detail">
+            <span class="detail-icon">📞</span>
+            <div>
+              <strong>Teléfono</strong>
+              <p>+34 900 000 000</p>
+            </div>
+          </div>
+          <div class="contact-detail">
+            <span class="detail-icon">✉</span>
+            <div>
+              <strong>Email</strong>
+              <p>info@marsaplay.com</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <form class="contact-form" id="contactForm" onsubmit="handleSubmit(event)">
+        <div class="form-row">
+          <div class="form-group">
+            <label for="nombre">NOMBRE</label>
+            <input type="text" id="nombre" placeholder="Tu nombre" required />
+          </div>
+          <div class="form-group">
+            <label for="empresa">EMPRESA</label>
+            <input type="text" id="empresa" placeholder="Tu empresa" />
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="email">EMAIL</label>
+          <input type="email" id="email" placeholder="tu@email.com" required />
+        </div>
+        <div class="form-group">
+          <label for="interes">INTERÉS</label>
+          <select id="interes">
+            <option value="">Selecciona una opción</option>
+            <option>Pinball</option>
+            <option>Arcade</option>
+            <option>Dardos</option>
+            <option>Jukebox</option>
+            <option>Distribución</option>
+            <option>Soporte Técnico</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="mensaje">MENSAJE</label>
+          <textarea id="mensaje" rows="4" placeholder="Cuéntanos tu proyecto..." required></textarea>
+        </div>
+        <button type="submit" class="btn-primary full">ENVIAR MENSAJE →</button>
+        <div id="formSuccess" class="form-success" style="display:none;">
+          ✅ Mensaje enviado. Nos pondremos en contacto pronto.
+        </div>
+      </form>
+    </div>
+  </section>
+
+  <!-- ======= FOOTER ======= -->
+  <footer class="footer">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <a href="#" class="logo">
+          <span class="logo-pixel">MARSA</span><span class="logo-accent">PLAY</span>
+        </a>
+        <p>Fabricantes españoles de máquinas de entretenimiento desde 1982. Calidad, innovación y servicio.</p>
+        <div class="footer-social">
+          <a href="#" aria-label="Facebook">FB</a>
+          <a href="#" aria-label="Instagram">IG</a>
+          <a href="#" aria-label="LinkedIn">LI</a>
+          <a href="#" aria-label="YouTube">YT</a>
+        </div>
+      </div>
+      <div class="footer-links">
+        <h5>PRODUCTOS</h5>
+        <a href="#">Pinball</a>
+        <a href="#">Arcade</a>
+        <a href="#">Dardos</a>
+        <a href="#">Jukeboxes</a>
+        <a href="#">Recambios</a>
+      </div>
+      <div class="footer-links">
+        <h5>EMPRESA</h5>
+        <a href="#">Historia</a>
+        <a href="#">Tecnología</a>
+        <a href="#">Distribuidores</a>
+        <a href="#">Noticias</a>
+        <a href="#">Trabajo</a>
+      </div>
+      <div class="footer-links">
+        <h5>SOPORTE</h5>
+        <a href="#">Manuales</a>
+        <a href="#">Repuestos</a>
+        <a href="#">Servicio Técnico</a>
+        <a href="#">FAQ</a>
+        <a href="#">Contacto</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2025 MarsaPlay S.L. · Todos los derechos reservados</p>
+      <div class="footer-legal">
+        <a href="#">Aviso Legal</a>
+        <a href="#">Privacidad</a>
+        <a href="#">Cookies</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- BACK TO TOP -->
+  <button class="back-to-top" id="backToTop" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</button>
+
+  <script src="scripts.js"></script>
+</body>
+</html>
